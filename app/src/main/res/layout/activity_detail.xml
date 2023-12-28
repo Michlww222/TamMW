@@ -1,0 +1,64 @@
+<!-- activity_detail.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewStarshipName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20sp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="?android:attr/selectableItemBackground" />
+
+    <ImageView
+        android:id="@+id/imageViewStarship"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/textViewStarshipName"
+        android:layout_marginTop="16dp"
+        android:scaleType="fitCenter" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewStarshipDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewStarshipName"
+        android:layout_marginTop="16dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recyclerViewStarshipDetails"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/btnPrevious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
+            android:text="Previous" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
+            android:text="Next" />
+
+        <Button
+            android:id="@+id/btnReturnToList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
+            android:text="Return to List" />
+    </RelativeLayout>
+</RelativeLayout>
