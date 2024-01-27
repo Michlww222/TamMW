@@ -21,17 +21,25 @@
         android:layout_marginTop="16dp"
         android:scaleType="fitCenter" />
 
+    <ListView
+        android:id="@+id/listViewStarshipDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageViewStarship"
+        android:layout_marginTop="16dp" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewStarshipDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewStarshipName"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp" />
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/recyclerViewStarshipDetails"
+        android:layout_below="@id/listViewStarshipDetails"
         android:layout_marginTop="16dp">
 
         <Button

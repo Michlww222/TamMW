@@ -3,8 +3,10 @@ package com.android.wasik
 import android.R
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Adapter
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import com.android.wasik.adapters.StarshipAdapter
 import com.android.wasik.databinding.ActivityDetailBinding
 import com.android.wasik.data.Starship
 
@@ -60,15 +62,20 @@ class DetailActivity : AppCompatActivity() {
             starshipDetails.add("Model: ${starships[index].model}")
             starshipDetails.add("Manufacturer: ${starships[index].manufacturer}")
             starshipDetails.add("Cost in Credits: ${starships[index].costInCredits}")
-            //todo Add other details
 
-            val adapter = ArrayAdapter(this, R.layout.simple_list_item_1, starshipDetails)
+            // Create an adapter with your custom layout or use a simple one if needed
+            val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, starshipDetails)
 
-            binding.recyclerViewStarshipDetails.adapter = adapter
+            // Set the adapter to the ListView
+            binding.listViewStarshipDetails.adapter = adapter
         } else {
             finish()
         }
     }
+
+
+
+
 
     private fun navigateToNextStarship() {
         currentIndex = (currentIndex + 1) % starships.size

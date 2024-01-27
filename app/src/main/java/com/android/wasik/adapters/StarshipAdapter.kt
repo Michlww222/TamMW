@@ -15,8 +15,7 @@ class StarshipAdapter(private val starships: List<Starship>, private val onItemC
     }
 
     override fun onBindViewHolder(holder: StarshipViewHolder, position: Int) {
-        val starship = starships[position]
-        holder.bind(starship)
+        holder.bind(starships[position])
     }
 
     override fun getItemCount(): Int = starships.size
@@ -31,8 +30,10 @@ class StarshipAdapter(private val starships: List<Starship>, private val onItemC
         }
 
         fun bind(starship: Starship) {
-            binding.itemName.text = starship.name
-            // You can bind other properties of the starship here if needed
+            with(binding) {
+                itemName.text = starship.name
+            }
         }
     }
 }
+
